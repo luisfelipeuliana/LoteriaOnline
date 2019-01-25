@@ -1,0 +1,49 @@
+<h1>Detalhes do concurso</h1>
+<hr />
+<div class="container-fluid">
+  <div class="col-md-5">
+    <label>Concurso: </label>
+    <span>{{concurso.concursoId}}</span>
+  </div>
+  <div class="col-md-7">
+    <label>Números do sorteados: </label>
+    <span>{{concurso.numeroSorteado}}</span>
+  </div>
+  <div class="col-md-5">
+    <label>Data de criação: </label>
+    <span>{{concurso.dataCriacao | date : 'dd/MM/yyyy'}}</span>
+  </div>
+  <div class="col-md-7">
+    <label>Data do sorteio: </label>
+    <span>{{concurso.dataSorteio | date : 'dd/MM/yyyy'}}</span>
+  </div>
+  <div class="col-md-5">
+    <label>Acumulou: </label>
+    <span>{{concurso.acumulou ? 'Sim' : 'Não'}}</span>
+  </div>
+  <div class="col-md-7">
+    <label>Tipo do sorteio: </label>
+    <span>{{concurso.nomeTipoConcurso}}</span>
+  </div> 
+</div>
+<hr />
+
+<table class='table' *ngIf="jogos">
+  <thead>
+    <tr>
+      <th>Jogo</th>
+      <th>Números do jogo</th>
+      <th>Data do jogo</th>
+      <th>Usuário</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let jogo of jogos">
+      <td>{{ jogo.jogoId}}</td>
+      <td>{{ jogo.numeroJogo}}</td>
+      <td>{{ jogo.dataJogo | date : 'dd/MM/yyyy'}}</td>
+      <td>{{ jogo.usuarioId}}</td>
+    </tr>
+  </tbody>
+</table>
+

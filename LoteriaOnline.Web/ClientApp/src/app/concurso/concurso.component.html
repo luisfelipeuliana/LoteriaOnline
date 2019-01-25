@@ -1,0 +1,37 @@
+<h1>Dados de concursos</h1>
+
+<p *ngIf="!concursos"><em>Loading...</em></p>
+<hr />
+<p>
+  <a class="btn btn-default" [routerLink]="['/concurso/adicionar']"><i class="glyphicon glyphicon-plus"></i> Adicionar</a>
+</p>
+
+<table class='table' *ngIf="concursos">
+  <thead>
+    <tr>
+      <th>Concurso</th>
+      <th>Data de criação</th>
+      <th>Data do sorteio</th>
+      <th>Números sorteados</th>
+      <th>Acumulou</th>
+      <th>Tipo do sorteio</th>
+      <th align="center">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let concurso of concursos">
+      <td>{{ concurso.concursoId}}</td>
+      <td>{{ concurso.dataCriacao | date : 'dd/MM/yyyy'}}</td>
+      <td>{{ concurso.dataSorteio | date : 'dd/MM/yyyy'}}</td>
+      <td>{{ concurso.numeroSorteado}}</td>
+      <td>{{ concurso.acumulou ? 'Sim' : 'Não'}}</td>
+      <td>{{ concurso.nomeTipoConcurso}}</td>
+      <td>
+        <a *ngIf="concurso.numeroSorteado == ''" [routerLink]="['/concurso/finalizar', concurso.concursoId]"><i class="glyphicon glyphicon-ok"></i> Finalizar </a>
+        <a *ngIf="concurso.numeroSorteado == ''" [routerLink]="['/concurso/editar', concurso.concursoId]"><i class="glyphicon glyphicon-pencil"></i> Editar </a>
+        <a *ngIf="concurso.numeroSorteado == ''" [routerLink]="" (click)="excluir(concurso.concursoId)"><i class="glyphicon glyphicon-remove"></i> Excluir</a>
+        <a *ngIf="concurso.numeroSorteado != ''" [routerLink]="['/concurso/detalhe', concurso.concursoId]"><i class="glyphicon glyphicon-info-sign"></i> Detalhes</a>
+      </td>
+    </tr>
+  </tbody>
+</table>

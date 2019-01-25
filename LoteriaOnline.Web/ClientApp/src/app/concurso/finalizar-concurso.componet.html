@@ -1,0 +1,13 @@
+<h1>Finalizar concurso</h1>
+<hr />
+
+<ul class="lista-numeros">
+  <li *ngFor="let item of numerosMegaSena">
+    <a (click)="atualizarNumerosSelecionados(item.numero)" class="{{item.selecionado ? 'selecionado' : ''}}" id="n{{item.numero}}">{{item.numero}}</a>
+  </li>
+</ul>
+<div class="form-group">
+  <button class="btn btn-default {{habilidarBotaoFinalizar ? '' : 'disabled'}}" [routerLink]="" (click)="finalizar()"><i class="glyphicon glyphicon-ok"></i> Finalizar</button>
+  <button class="btn btn-default" (click)="limpar()"><i class="glyphicon glyphicon-erase"></i> Limpar</button>
+  <button class="btn btn-default" (click)="voltar()"><i class="glyphicon glyphicon-remove"></i> Voltar</button>
+</div>

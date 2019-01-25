@@ -1,0 +1,40 @@
+.lista-numeros {
+  display: inline-block;
+  margin: 10px 0;
+  text-align: left;
+  padding-left:10px;
+}
+
+
+  .lista-numeros li{
+    color: #6f6f6f;
+    display: inline-block;
+    font-size: 22px;
+    font-weight: 700;
+    margin: 0 5px 15px 0;
+    text-decoration: none;
+  }
+
+  .lista-numeros li a {
+    background: #adc0c4;
+    border-radius: 25px;
+    color: #fff;
+    cursor: pointer;
+    display: block;
+    font-family: futuraBold;
+    font-size: 21px;
+    line-height: 47px;
+    padding: 0;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    width: 48px;
+  }
+
+    .lista-numeros li a.selecionado {
+      background-color: #01ac66;
+    }
+
+.curso-pointer {
+  cursor: pointer;
+}

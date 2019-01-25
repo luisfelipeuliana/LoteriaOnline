@@ -1,0 +1,35 @@
+<h1>Dados de usuários</h1>
+
+<p *ngIf="!usuarios"><em>Loading...</em></p>
+<hr />
+<p>
+  <a class="btn btn-default" [routerLink]="['/usuario/adicionar']"><i class="glyphicon glyphicon-plus"></i> Adicionar</a>
+</p>
+
+<table class='table' *ngIf="usuarios">
+  <thead>
+    <tr>
+      <th>Usuário</th>
+      <th>Nome</th>
+      <th>Data de nascimento</th>
+      <th>CPF</th>
+      <th>E-mail</th>
+      <th align="center">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let usuario of usuarios">
+      <td>{{ usuario.usuarioId}}</td>
+      <td>{{ usuario.nome}}</td>
+      <td>{{ usuario.dataNascimento | date : 'dd/MM/yyyy'}}</td>
+      <td>{{ usuario.cpf}}</td>
+      <td>{{ usuario.email}}</td>
+      <td>
+        <!--<a [routerLink]="['/employee/edit/', emp.employeeId]">Edit</a> |
+        <a [routerLink]="" (click)="delete(emp.employeeId)">Delete</a>-->
+        <a [routerLink]="['/usuario/editar', usuario.usuarioId]"><i class="glyphicon glyphicon-pencil"></i> Editar</a> |
+        <a [routerLink]="" (click)="excluir(usuario.usuarioId)"><i class="glyphicon glyphicon-remove"></i> Excluir</a>
+      </td>
+    </tr>
+  </tbody>
+</table>

@@ -1,0 +1,64 @@
+<h1>{{title}}</h1>
+<hr />
+<form [formGroup]="usuarioForm" (ngSubmit)="salvar()" #formDir="ngForm" novalidate>
+  <div class="form-group row">
+    <label class=" control-label col-md-12">Nome</label>
+    <div class="col-md-4">
+      <input class="form-control" type="text" formControlName="nome">
+    </div>
+    <span class="text-danger" *ngIf="nome.invalid && formDir.submitted">
+      Nome é obrigatório.
+    </span>
+  </div>
+  <div class="form-group row">
+    <label class="control-label col-md-12">Data de nascimento</label>
+    <div class="col-md-4">
+      <input class="form-control" type="datetime-local" formControlName="dataNascimento">
+    </div>
+    <span class="text-danger" *ngIf="dataNascimento.invalid && formDir.submitted">
+      Data de nascimento é obrigatório
+    </span>
+  </div>
+  <div class="form-group row">
+    <label class="control-label col-md-12">CPF</label>
+    <div class="col-md-4">
+      <input class="form-control" type="text" formControlName="cpf">
+    </div>
+    <span class="text-danger" *ngIf="cpf.invalid && formDir.submitted">
+      CPF é obrigatório
+    </span>
+  </div>
+  <div class="form-group row">
+    <label class="control-label col-md-12">E-mail</label>
+    <div class="col-md-4">
+      <input class="form-control" type="email" formControlName="email">
+    </div>
+    <span class="text-danger" *ngIf="email.invalid && formDir.submitted">
+      E-mail é obrigatório
+    </span>
+  </div>
+
+  <div class="form-group row">
+    <label class="control-label col-md-12">Login</label>
+    <div class="col-md-4">
+      <input class="form-control" type="email" formControlName="login">
+    </div>
+    <span class="text-danger" *ngIf="login.invalid && formDir.submitted">
+      Login é obrigatório
+    </span>
+  </div>
+
+  <div class="form-group row">
+    <label class="control-label col-md-12">Senha</label>
+    <div class="col-md-4">
+      <input class="form-control" type="email" formControlName="senha">
+    </div>
+    <span class="text-danger" *ngIf="senha.invalid && formDir.submitted">
+      Senha é obrigatório
+    </span>
+  </div>
+  <div class="form-group">
+    <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-floppy-disk"></i> Salvar</button>
+    <button class="btn" (click)="cancelar()"><i class="glyphicon glyphicon-remove"></i> Cancelar</button>
+  </div>
+</form>

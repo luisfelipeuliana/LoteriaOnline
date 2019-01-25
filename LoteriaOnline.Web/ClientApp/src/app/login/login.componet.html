@@ -1,0 +1,15 @@
+  <form style="width:40%; margin-left:100px; margin-top: 50px;" class="form-signin" [formGroup]="loginForm" #formDir="ngForm" (ngSubmit)="logar()">
+    <div class="container-fluid">
+      <h2 class="form-signin-heading">Login</h2>
+      <div *ngIf="invalidLogin" class="alert alert-danger">Login inválido.</div>
+      <br />
+      <label class="sr-only">Login</label>
+      <input class="form-control" placeholder="Login" formControlName="login">
+      <br />
+      <label class="sr-only">Senha</label>
+      <input type="password" formControlName="senha" class="form-control" placeholder="Senha">
+      <br />
+      <button class="btn btn-lg btn-primary btn-block" type="submit">Entrar</button>
+    </div>
+  </form>
+

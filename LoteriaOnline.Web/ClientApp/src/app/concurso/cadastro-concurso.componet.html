@@ -1,0 +1,26 @@
+<h1>{{title}}</h1>
+<hr />
+<form [formGroup]="concursoForm" (ngSubmit)="salvar()" #formDir="ngForm" novalidate>
+  <div class="form-group row">
+    <label class=" control-label col-md-12">Data de criação</label>
+    <div class="col-md-4">
+      <input class="form-control" type="datetime-local" formControlName="dataCriacao">
+    </div>
+    <span class="text-danger" *ngIf="dataCriacao.invalid && formDir.submitted">
+      Data de criaçaõ é obrigatório.
+    </span>
+  </div>
+  <div class="form-group row">
+    <label class="control-label col-md-12">Data do sorteio</label>
+    <div class="col-md-4">
+      <input class="form-control" type="datetime-local" formControlName="dataSorteio">
+    </div>
+    <span class="text-danger" *ngIf="dataSorteio.invalid && formDir.submitted">
+      Data do sorteio é obrigatório
+    </span>
+  </div>    
+  <div class="form-group">
+    <button type="submit" class="btn btn-default"><i class="glyphicon glyphicon-floppy-disk"></i> Salvar</button>
+    <button class="btn" (click)="cancelar()"><i class="glyphicon glyphicon-remove"></i> Cancelar</button>
+  </div>
+</form>

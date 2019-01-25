@@ -1,0 +1,44 @@
+<h1>Dados de jogos</h1>
+
+<p *ngIf="!numerosMegaSena"><em>Loading...</em></p>
+<hr />
+
+<ul class="lista-numeros">
+  <li *ngFor="let item of numerosMegaSena">
+    <a (click)="atualizarNumerosSelecionados(item.numero)" class="{{item.selecionado ? 'selecionado' : ''}}" id="n{{item.numero}}">{{item.numero}}</a>
+  </li>
+</ul>
+<div class="form-group">
+  <button class="btn btn-default {{habilidarBotaoSalvar ? '' : 'disabled'}}" [routerLink]="" (click)="salvar()"><i class="glyphicon glyphicon-floppy-disk"></i> Salvar</button>
+  <button class="btn btn-default" (click)="gerarJogoAleatorio()"><i class="glyphicon glyphicon-retweet"></i> Gerar jogo aleatório</button>
+  <button class="btn btn-default" (click)="limpar()"><i class="glyphicon glyphicon-erase"></i> Limpar</button>
+</div>
+
+<hr />
+<table class='table' *ngIf="jogos">
+  <thead>
+    <tr>
+      <th>Jogo</th>
+      <th>Concurso</th>
+      <th>Número do jogo</th>
+      <th>Data do jogo</th>
+      <th>Usuário</th>
+      <th align="center">Ações</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let jogo of jogos">
+      <td>{{ jogo.jogoId}}</td>
+      <td>{{ jogo.concursoId}}</td>
+      <td>{{ jogo.numeroJogo}}</td>
+      <td>{{ jogo.dataJogo | date : 'dd/MM/yyyy'}}</td>
+      <td>{{ jogo.usuarioId}}</td>
+      <td>
+        <a class="curso-pointer" (click)="getJogo(jogo.jogoId)"><i class="glyphicon glyphicon-pencil"></i> Editar</a> |
+        <a class="curso-pointer" (click)="excluir(jogo.jogoId)"><i class="glyphicon glyphicon-remove"></i> Excluir</a>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+

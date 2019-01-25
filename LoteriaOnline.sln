@@ -1,0 +1,43 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.271
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoteriaOnline.ApplicationCore", "LoteriaOnline.ApplicationCore\LoteriaOnline.ApplicationCore.csproj", "{B96BF798-90C9-4FB9-A4C7-384682B43231}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoteriaOnline.Infrastructure", "LoteriaOnline.Infrastructure\LoteriaOnline.Infrastructure.csproj", "{882F1DE2-BE05-45A0-BF14-3981B02ECD6E}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "LoteriaOnline.Web", "LoteriaOnline.Web\LoteriaOnline.Web.csproj", "{2A92EB28-BF5F-45B9-959F-F180ABC17C24}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LoteriaOnline.Test", "LoteriaOnline.Test\LoteriaOnline.Test.csproj", "{33B3EA6C-03DD-413F-9E3E-8F11FE2D3834}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{B96BF798-90C9-4FB9-A4C7-384682B43231}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B96BF798-90C9-4FB9-A4C7-384682B43231}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B96BF798-90C9-4FB9-A4C7-384682B43231}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B96BF798-90C9-4FB9-A4C7-384682B43231}.Release|Any CPU.Build.0 = Release|Any CPU
+		{882F1DE2-BE05-45A0-BF14-3981B02ECD6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{882F1DE2-BE05-45A0-BF14-3981B02ECD6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{882F1DE2-BE05-45A0-BF14-3981B02ECD6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{882F1DE2-BE05-45A0-BF14-3981B02ECD6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2A92EB28-BF5F-45B9-959F-F180ABC17C24}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2A92EB28-BF5F-45B9-959F-F180ABC17C24}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2A92EB28-BF5F-45B9-959F-F180ABC17C24}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2A92EB28-BF5F-45B9-959F-F180ABC17C24}.Release|Any CPU.Build.0 = Release|Any CPU
+		{33B3EA6C-03DD-413F-9E3E-8F11FE2D3834}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{33B3EA6C-03DD-413F-9E3E-8F11FE2D3834}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{33B3EA6C-03DD-413F-9E3E-8F11FE2D3834}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{33B3EA6C-03DD-413F-9E3E-8F11FE2D3834}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {28163837-C738-4DEB-9736-79282A9E424D}
+	EndGlobalSection
+EndGlobal
