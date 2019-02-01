@@ -7,5 +7,6 @@ namespace LoteriaOnline.ApplicationCore.Interface.Repository
 {
     public interface IUsuarioRepository : IRepository<Usuario>
     {
+        Usuario RecuperarPorLogin(string login);
     }
 }

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using LoteriaOnline.ApplicationCore.Interface.Service;
 using LoteriaOnline.ApplicationCore.Model.Entity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -36,13 +37,6 @@ namespace LoteriaOnline.Web.Controllers
         [HttpGet]
         [Route("api/Concurso/RecuperarPorId/{id}")]
         public Concurso RecuperarPorId(long id)
-        {
-            return _concursoService.RecuperarPorId(id);
-        }
-
-        [HttpGet]
-        [Route("api/Concurso/Detalhes/{id}")]
-        public Concurso Detalhes(long id)
         {
             return _concursoService.RecuperarPorId(id);
         }

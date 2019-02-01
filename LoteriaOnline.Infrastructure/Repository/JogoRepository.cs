@@ -21,6 +21,7 @@ namespace LoteriaOnline.Infrastructure.Repository
                     item.DataJogo = jogo.DataJogo;
                     item.NumeroJogo = jogo.NumeroJogo;
                     item.UsuarioId = jogo.UsuarioId;
+                    item.Premiu = jogo.Premiu;
                     break;
                 }
             }
@@ -40,7 +41,8 @@ namespace LoteriaOnline.Infrastructure.Repository
 
         public IEnumerable<Jogo> RecuperaJogosGanhadores(long concursoId)
         {
-            return LoteriaOnlineData.Jogos.Where(x => x.ConcursoId == concursoId && x.Premiu != PremiuEnum.NaoSorteado);
+            return LoteriaOnlineData.Jogos.Where(x => x.ConcursoId == concursoId 
+                && (x.Premiu == PremiuEnum.Quadra || x.Premiu == PremiuEnum.Quina || x.Premiu == PremiuEnum.Sena));
         }
 
         public IEnumerable<Jogo> RecuperaPorConcurso(long concursoId)

@@ -35,6 +35,7 @@
       <th>Números do jogo</th>
       <th>Data do jogo</th>
       <th>Usuário</th>
+      <th>Premiu</th>
     </tr>
   </thead>
   <tbody>
@@ -43,6 +44,7 @@
       <td>{{ jogo.numeroJogo}}</td>
       <td>{{ jogo.dataJogo | date : 'dd/MM/yyyy'}}</td>
       <td>{{ jogo.usuarioId}}</td>
+      <td>{{ jogo.descricaoPremiu}}</td>
     </tr>
   </tbody>
 </table>

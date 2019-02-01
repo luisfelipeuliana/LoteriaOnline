@@ -19,6 +19,8 @@ namespace LoteriaOnline.ApplicationCore.Model.Entity
         public string Login { get; set; }
 
         public string Senha { get; set; }
+
+        public bool Administrador { get; set; }
     }
 
 }

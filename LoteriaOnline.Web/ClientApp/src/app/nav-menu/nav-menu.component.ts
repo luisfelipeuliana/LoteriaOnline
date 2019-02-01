@@ -1,7 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { JwtHelper } from 'angular2-jwt';
-
 import { LoginService } from '../services/login.service';
 
 @Component({
@@ -9,6 +8,7 @@ import { LoginService } from '../services/login.service';
   templateUrl: './nav-menu.component.html',
   styleUrls: ['./nav-menu.component.css']
 })
+
 export class NavMenuComponent implements OnInit {
   isExpanded = false;
   logado: any;

@@ -20,7 +20,7 @@ namespace LoteriaOnline.Infrastructure.Repository
                     item.DataCriacao = concurso.DataCriacao;
                     item.DataSorteio = concurso.DataSorteio;
                     item.NumeroSorteado = concurso.NumeroSorteado;
-                    item.TipoConcurso = concurso.TipoConcurso;
+                    item.TipoConcurso = concurso.TipoConcurso;                    
                     break;
                 }
             }

@@ -40,6 +40,12 @@ namespace LoteriaOnline.ApplicationCore.Service
             _usuarioRepository.Excluir(usuario);
         }
 
+        public Usuario LogarUsuario(string login, string senha)
+        {
+            var usuario = _usuarioRepository.RecuperarPorLogin(login);
+            return usuario != null && usuario.Senha == senha ? usuario : null;
+        }
+
         public Usuario RecuperarPorId(long usuarioId)
         {
             return _usuarioRepository.RecuperarPorId(usuarioId);

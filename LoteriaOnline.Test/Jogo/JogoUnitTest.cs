@@ -23,27 +23,8 @@ namespace LoteriaOnline.Test
             _jogoController = new JogoController(_jogoService);
         }
 
-        #region Listar
-        [Fact(DisplayName = "Verifica se existe algum jogo cadastrado")]
-        public void Verifica_Existencia_Jogo()
-        {
-            var jogos = _jogoController.Listar();
-            Assert.True(jogos.Any());
-        }
-        #endregion
-
-        #region RecuperarPorId
-        [Theory(DisplayName = "Deve retornar o jogo pelo jogoId")]
-        [InlineData(1)]
-        public void Deve_Retorna_Jogo(long jogoId)
-        {
-            var jogo = _jogoController.RecuperarPorId(jogoId);
-            Assert.NotNull(jogo);
-        }
-        #endregion
-
         #region Cadastro
-        [Theory(DisplayName = "Deve cadastrar o novo jogo")]
+        [Theory(DisplayName = "1.1 Deve cadastrar o novo jogo")]
         [ClassData(typeof(NovoJogoDataTest))]
         public void Cadastra_Novo_Jogo(Jogo jogo)
         {
@@ -53,7 +34,7 @@ namespace LoteriaOnline.Test
             ValidarJogo(jogoDB, jogo);
         }
 
-        [Theory(DisplayName = "Deve editar o jogo")]
+        [Theory(DisplayName = "1.2 Deve editar o jogo")]
         [ClassData(typeof(NovoJogoDataTest))]
         public void Editar_Jogo_Existente(Jogo jogo)
         {
@@ -63,19 +44,27 @@ namespace LoteriaOnline.Test
         }
         #endregion
 
-        #region Excluir
-        [Theory(DisplayName = "Deve excluir o jogo pelo jogoId")]
-        [InlineData(2)]
-        public void Deve_excluir_Jogo(long jogoId)
+        #region Listar
+        [Fact(DisplayName = "1.3 Verifica se existe algum jogo cadastrado")]
+        public void Verifica_Existencia_Jogo()
         {
-            var jogoExcluidoId = _jogoController.Excluir(jogoId);
-            var jogoExcluido = _jogoController.RecuperarPorId(jogoExcluidoId);
-            Assert.Null(jogoExcluido);
+            var jogos = _jogoController.Listar();
+            Assert.True(jogos.Any());
+        }
+        #endregion
+
+        #region RecuperarPorId
+        [Theory(DisplayName = "1.4 Deve retornar o jogo pelo jogoId")]
+        [InlineData(1)]
+        public void Deve_Retorna_Jogo(long jogoId)
+        {
+            var jogo = _jogoController.RecuperarPorId(jogoId);
+            Assert.NotNull(jogo);
         }
         #endregion
 
         #region GerarJogoAleatorioMegaSena
-        [Theory(DisplayName = "Deve gerar um jogo aleatório da Mega-Sena e verificar a quantidade de números distintos")]
+        [Theory(DisplayName = "1.5 Deve gerar um jogo aleatório da Mega-Sena e verificar a quantidade de números distintos")]
         [InlineData(6)]
         [InlineData(8)]
         [InlineData(15)]
@@ -86,7 +75,7 @@ namespace LoteriaOnline.Test
             Assert.Equal(numerosDistintosGerados, quantidadeNumeros);
         }
 
-        [Theory(DisplayName = "Deve gerar um jogo aleatório da Mega-Sena e validar valor mínimo e máximo")]
+        [Theory(DisplayName = "1.6 Deve gerar um jogo aleatório da Mega-Sena e validar valor mínimo e máximo")]
         [InlineData(6)]
         [InlineData(8)]
         [InlineData(15)]
@@ -95,6 +84,38 @@ namespace LoteriaOnline.Test
             var listaNumerosAleatorios = _jogoController.GerarJogoAleatorioMegaSena(quantidadeNumeros);
             var numerosValido = listaNumerosAleatorios.Any(x => x > 60 || x < 1);
             Assert.False(numerosValido);
+        }
+        #endregion
+
+        #region RecuperarNumeroJogo
+        [Theory(DisplayName = "1.7 Verifica se existe números de jogo por jogoId")]
+        [InlineData(1)]
+        [InlineData(2)]
+        public void Verifica_Existencia_Numeros_Jogo(long jogoId)
+        {
+            var numerosJogo = _jogoController.RecuperarNumeroJogo(jogoId);
+            Assert.True(numerosJogo.Any());
+        }
+        #endregion
+
+        #region RecuperarNumeroJogo
+        [Theory(DisplayName = "1.8 Verifica se existe ganhadores por concursoId")]
+        [InlineData(1)]
+        public void Verifica_Existencia_Ganhadores(long concursoId)
+        {
+            var ganhadores = _jogoController.RecuperarJogosGanhadores(concursoId);
+            Assert.True(ganhadores.Any());
+        }
+        #endregion
+
+        #region Excluir
+        [Theory(DisplayName = "1.9 Deve excluir o jogo pelo jogoId")]
+        [InlineData(2)]
+        public void Deve_excluir_Jogo(long jogoId)
+        {
+            var jogoExcluidoId = _jogoController.Excluir(jogoId);
+            var jogoExcluido = _jogoController.RecuperarPorId(jogoExcluidoId);
+            Assert.Null(jogoExcluido);
         }
         #endregion
 

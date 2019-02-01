@@ -23,27 +23,8 @@ namespace LoteriaOnline.Test
             _usuarioController = new UsuarioController(_usuarioService);
         }
 
-        #region Listar
-        [Fact(DisplayName ="Verifica se existe algum usuário cadastrado")]
-        public void Verifica_Existencia_usuario()
-        {
-            var usuarios = _usuarioController.Listar();
-            Assert.True(usuarios.Any());
-        }
-        #endregion
-
-        #region RecuperarPorId
-        [Theory(DisplayName = "Deve retornar o usuário pelo usuarioId")]
-        [InlineData(1)]
-        public void Deve_Retorna_Usuario(long usuarioId)
-        {
-            var usuario = _usuarioController.RecuperarPorId(usuarioId);
-            Assert.NotNull(usuario);
-        }
-        #endregion
-
         #region Cadastro
-        [Theory(DisplayName = "Deve cadastrar o novo usuário")]
+        [Theory(DisplayName = "1.1 Deve cadastrar o novo usuário")]
         [ClassData(typeof(NovoUsuarioDataTest))]
         public void Cadastra_Novo_Usuario(Usuario usuario)
         {
@@ -53,7 +34,7 @@ namespace LoteriaOnline.Test
             ValidarUsuario(usuarioDB, usuario);
         }
 
-        [Theory(DisplayName = "Deve editar o usuário")]
+        [Theory(DisplayName = "1.2 Deve editar o usuário")]
         [ClassData(typeof(NovoUsuarioDataTest))]
         public void Editar_Usuario_Existente(Usuario usuario)
         {
@@ -63,8 +44,27 @@ namespace LoteriaOnline.Test
         }
         #endregion
 
+        #region Listar
+        [Fact(DisplayName ="1.3 Verifica se existe algum usuário cadastrado")]
+        public void Verifica_Existencia_usuario()
+        {
+            var usuarios = _usuarioController.Listar();
+            Assert.True(usuarios.Any());
+        }
+        #endregion
+
+        #region RecuperarPorId
+        [Theory(DisplayName = "1.4 Deve retornar o usuário pelo usuarioId")]
+        [InlineData(1)]
+        public void Deve_Retorna_Usuario(long usuarioId)
+        {
+            var usuario = _usuarioController.RecuperarPorId(usuarioId);
+            Assert.NotNull(usuario);
+        }
+        #endregion        
+
         #region Excluir
-        [Theory(DisplayName = "Deve excluir o usuário pelo usuarioId")]
+        [Theory(DisplayName = "1.5 Deve excluir o usuário pelo usuarioId")]
         [InlineData(2)]
         public void Deve_excluir_Usuario(long usuarioId)
         {
@@ -81,6 +81,9 @@ namespace LoteriaOnline.Test
             Assert.Equal(usuarioDB.DataNascimento, usuarioParametro.DataNascimento);
             Assert.Equal(usuarioDB.Email, usuarioParametro.Email);
             Assert.Equal(usuarioDB.Nome, usuarioParametro.Nome);
+            Assert.Equal(usuarioDB.Login, usuarioParametro.Login);
+            Assert.Equal(usuarioDB.Senha, usuarioParametro.Senha);
+            Assert.Equal(usuarioDB.Administrador, usuarioParametro.Administrador);
         }
         #endregion
     }

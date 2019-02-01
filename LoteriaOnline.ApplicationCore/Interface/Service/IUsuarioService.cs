@@ -11,5 +11,6 @@ namespace LoteriaOnline.ApplicationCore.Interface.Service
         void Excluir(long usuarioId);
         IEnumerable<Usuario> RecuperaTodos();
         Usuario RecuperarPorId(long usuarioId);
+        Usuario LogarUsuario(string login, string senha);
     }
 }

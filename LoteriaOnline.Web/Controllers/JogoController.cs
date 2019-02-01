@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using LoteriaOnline.ApplicationCore.Interface.Service;
 using LoteriaOnline.ApplicationCore.Model.Entity;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 

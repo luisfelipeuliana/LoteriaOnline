@@ -7,8 +7,8 @@ namespace LoteriaOnline.ApplicationCore.Model.Enum
 {
     public enum PremiuEnum
     {
-        [Description("Não sorteado")]
-        NaoSorteado = 1,
+        [Description("Não premiado")]
+        NaoPremiado = 1,
 
         [Description("Quadra")]
         Quadra = 2,

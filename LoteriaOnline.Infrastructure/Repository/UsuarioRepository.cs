@@ -22,6 +22,7 @@ namespace LoteriaOnline.Infrastructure.Repository
                     item.Nome = usuario.Nome;
                     item.Login = usuario.Login;
                     item.Senha = usuario.Senha;
+                    item.Administrador = usuario.Administrador;
                     break;
                 }
             }
@@ -44,10 +45,14 @@ namespace LoteriaOnline.Infrastructure.Repository
             return LoteriaOnlineData.Usuarios.FirstOrDefault( x => x.UsuarioId == usuarioId);
         }
 
+        public Usuario RecuperarPorLogin(string login)
+        {
+            return LoteriaOnlineData.Usuarios.FirstOrDefault(x => x.Login == login);
+        }
+
         public virtual IEnumerable<Usuario> RecuperaTodos()
         {
             return LoteriaOnlineData.Usuarios;
         }
-
     }
 }

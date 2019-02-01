@@ -1,4 +1,5 @@
-﻿using LoteriaOnline.ApplicationCore.Model.Enum;
+﻿using LoteriaOnline.ApplicationCore.Helps.Extension;
+using LoteriaOnline.ApplicationCore.Model.Enum;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -17,7 +18,7 @@ namespace LoteriaOnline.ApplicationCore.Model.Entity
 
         public int ConcursoId { get; set; }
 
-        public PremiuEnum Premiu { get; set; }
+        public PremiuEnum? Premiu { get; set; }
 
         public virtual Usuario Usuario { get; set; }
 
@@ -26,6 +27,12 @@ namespace LoteriaOnline.ApplicationCore.Model.Entity
 
     public partial class Jogo
     {
-        public string NomeUsuario { get; set; }
+        public string DescricaoPremiu
+        {
+            get
+            {
+                return Premiu.GetDescription();
+            }
+        }
     }
 }

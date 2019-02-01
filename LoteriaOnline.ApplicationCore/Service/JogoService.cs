@@ -105,7 +105,7 @@ namespace LoteriaOnline.ApplicationCore.Service
                     jogo.Premiu = PremiuEnum.Quadra;
                     break;
                 default:
-                    jogo.Premiu = PremiuEnum.NaoSorteado;
+                    jogo.Premiu = PremiuEnum.NaoPremiado;
                     break;
             }
             _jogoRepository.Editar(jogo);

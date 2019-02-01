@@ -11,6 +11,8 @@ namespace LoteriaOnline.ApplicationCore.Helps.Extension
     {
         public static string GetDescription(this System.Enum enumerationValue)
         {
+            if (enumerationValue == null)
+                return string.Empty; 
             Type type = enumerationValue.GetType();
             MemberInfo member = type.GetMembers().Where(w => w.Name == System.Enum.GetName(type, enumerationValue)).FirstOrDefault();
             var attribute = member?.GetCustomAttributes(typeof(DescriptionAttribute), false).FirstOrDefault() as DescriptionAttribute;

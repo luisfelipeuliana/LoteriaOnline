@@ -11,9 +11,9 @@ namespace LoteriaOnline.Test
     {
         private readonly List<object[]> _data = new List<object[]>
         {
-            new object[] { new Usuario { Cpf = "13752976780", DataNascimento = DateTime.Now, Email = "felipedaf@gmail.com", Nome = "Luis felipe"} },
+            new object[] { new Usuario { Cpf = "13752976780", DataNascimento = DateTime.Now, Email = "felipedaf@gmail.com", Nome = "Luis felipe", Login = "teste", Senha = "123", Administrador = true} },
 
-            new object[] { new Usuario { UsuarioId = 1000, Cpf = "137529545480", DataNascimento = DateTime.Now, Email = "felipe@gmail.com", Nome = "Luis Paulo"} },
+            new object[] { new Usuario { UsuarioId = 1000, Cpf = "137529545480", DataNascimento = DateTime.Now, Email = "felipe@gmail.com", Nome = "Luis Paulo", Login = "teste123", Senha = "123456", Administrador = false } },
          };
 
         public IEnumerator<object[]> GetEnumerator()
@@ -27,8 +27,8 @@ namespace LoteriaOnline.Test
     {
         private readonly List<object[]> _data = new List<object[]>
         {
-            new object[] { new Usuario { UsuarioId = 2, Cpf = "13752976780", DataNascimento = DateTime.Now, Email = "felipedaf@gmail.com", Nome = "Luis felipe"} },
-            new object[] { new Usuario { UsuarioId = 1, Cpf = "137529545480", DataNascimento = DateTime.Now, Email = "felipe@gmail.com", Nome = "Luis Paulo"} },
+            new object[] { new Usuario { UsuarioId = 2, Cpf = "13752976780", DataNascimento = DateTime.Now, Email = "felipedaf@gmail.com", Nome = "Luis felipe", Login = "teste1", Senha = "1234", Administrador = true } },
+            new object[] { new Usuario { UsuarioId = 1, Cpf = "137529545480", DataNascimento = DateTime.Now, Email = "felipe@gmail.com", Nome = "Luis Paulo", Login = "teste123", Senha = "123456", Administrador = true} },
          };
 
         public IEnumerator<object[]> GetEnumerator()

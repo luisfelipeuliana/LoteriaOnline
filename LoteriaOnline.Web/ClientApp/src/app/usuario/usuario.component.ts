@@ -3,8 +3,6 @@ import { Http, Headers } from '@angular/http';
 import { Router, ActivatedRoute } from '@angular/router';
 import { UsuarioService } from '../services/usuario.service'
 
-import { JwtHelper } from 'angular2-jwt';
-
 @Component({
   templateUrl: './usuario.component.html',
   selector: "app-usuario.component"
@@ -13,7 +11,7 @@ import { JwtHelper } from 'angular2-jwt';
 export class UsuarioComponent {
   public usuarios: UsuarioData[];
 
-  constructor(public http: Http, private _router: Router, private _usuarioService: UsuarioService, private jwtHelper: JwtHelper) {
+  constructor(public http: Http, private _router: Router, private _usuarioService: UsuarioService) {
     this.getUsuarios();    
   }
 

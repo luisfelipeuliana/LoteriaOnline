@@ -9,7 +9,7 @@ import { LoginService } from '../services/login.service';
   selector: "app-login"
 })
 
-export class LoginConponent implements OnInit {
+export class LoginConponent {
   loginForm: FormGroup;
   invalidLogin: boolean;
   errorMessage: any;
@@ -21,9 +21,6 @@ export class LoginConponent implements OnInit {
       login: ['', [Validators.required]],
       senha: ['', [Validators.required]],
     })
-  }
-
-  ngOnInit() {
   }
 
   logar() {

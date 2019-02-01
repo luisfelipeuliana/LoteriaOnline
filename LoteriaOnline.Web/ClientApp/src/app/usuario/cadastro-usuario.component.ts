@@ -43,7 +43,6 @@ export class CadastroUsuarioConponent implements OnInit {
   }
 
   salvar() {
-
     if (!this.usuarioForm.valid) {
       return;
     }

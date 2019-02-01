@@ -58,4 +58,5 @@ interface jogoData {
   usuarioId: number;
   concursoId: number;
   dataJogo: Date;
+  descricaoPremiu: string;
 }
